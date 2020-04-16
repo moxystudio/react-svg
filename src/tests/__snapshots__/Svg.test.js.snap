@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Svg should handle correctly when svg is a promise 1`] = `"<i class=\\"svgWrapper\\"></i>"`;
+
+exports[`Svg should handle correctly when svg is a promise that fails 1`] = `"<i class=\\"svgWrapper\\"></i>"`;
+
+exports[`Svg should render correctly 1`] = `"<i class=\\"svgWrapper\\">foo</i>"`;
+
+exports[`Svg should render correctly when receiving new svg prop 1`] = `"<i class=\\"svgWrapper\\">bar</i>"`;

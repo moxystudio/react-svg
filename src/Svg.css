@@ -1,0 +1,9 @@
+.svgWrapper {
+    display: inline-block;
+    vertical-align: center;
+
+    & svg {
+        display: block;  /* Remove little margin between the svg and its parent */
+        user-select: none;
+    }
+}
