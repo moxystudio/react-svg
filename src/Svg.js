@@ -2,8 +2,6 @@ import React, { Component, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './Svg.css';
-
 export class Svg extends Component {
     static getDerivedStateFromProps(props, state) {
         return {
@@ -55,7 +53,6 @@ export class Svg extends Component {
         const promise = this.promise = svg;
         const result = await this.promise.catch(() => ({ default: '' }));
 
-        /* istanbul ignore next */
         if (promise === this.promise) {
             this.setState({ contents: result.default });
         }
