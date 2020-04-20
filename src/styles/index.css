@@ -3,7 +3,7 @@
     vertical-align: center;
 
     & svg {
-        display: block;  /* Remove little margin between the svg and its parent */
+        display: block;
         user-select: none;
     }
 }

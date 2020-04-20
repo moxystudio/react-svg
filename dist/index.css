@@ -1,8 +1,10 @@
-.next-lib-template_container {
-    background-color: black;
-    color: white
+.svgWrapper {
+    display: inline-block;
+    vertical-align: center
 }
-.next-lib-template_container::after {
-        content: '';
-        margin-bottom: 50px;
+.svgWrapper svg {
+        display: block;
+        -webkit-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
     }
