@@ -3,14 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export class Svg extends Component {
-    static getDerivedStateFromProps(props, state) {
-        return {
-            contents: typeof props.svg === 'string' ? props.svg : state.contents,
-        };
-    }
-
     promise = undefined;
-    state = { contents: '' };
+    state = { contents: null, attributes: null };
 
     componentDidMount() {
         this.maybeWaitForSvg();
@@ -28,13 +22,38 @@ export class Svg extends Component {
 
     render() {
         const { svg, className, forwardedRef, ...rest } = this.props;
-        const { contents } = this.state;
-        const finalProps = {
-            ...rest,
-            className: classNames('svgWrapper', className),
-        };
+        const { contents, attributes } = this.state;
 
-        return <i { ...finalProps } ref={ forwardedRef } dangerouslySetInnerHTML={ { __html: contents } } />;
+        if (contents === null) {
+            return null;
+        }
+
+        return (
+            <svg
+                { ...attributes }
+                { ...rest }
+                className={ classNames('react-svg', className) }
+                ref={ forwardedRef }
+                dangerouslySetInnerHTML={ { __html: contents } } />
+        );
+    }
+
+    parseSvg(svg) {
+        if (svg == null || typeof window === 'undefined') {
+            return { contents: null, attributes: null };
+        }
+
+        const parser = new window.DOMParser();
+        const doc = parser.parseFromString(svg, 'image/svg+xml');
+        const svgElem = doc.querySelector('svg');
+
+        const attributes = Array.from(svgElem.attributes).reduce((acc, item) => {
+            acc[item.name] = item.nodeValue;
+
+            return acc;
+        }, {});
+
+        return { contents: svgElem.innerHTML, attributes };
     }
 
     resetWaitForSvg() {
@@ -46,15 +65,15 @@ export class Svg extends Component {
 
         this.resetWaitForSvg();
 
-        if (typeof svg !== 'object') {
-            return;
+        if (typeof svg === 'string') {
+            return this.setState(this.parseSvg(svg));
         }
 
         const promise = this.promise = svg;
-        const result = await this.promise.catch(() => ({ default: '' }));
+        const result = await this.promise.catch(() => ({ default: null }));
 
         if (promise === this.promise) {
-            this.setState({ contents: result.default });
+            return this.setState(this.parseSvg(result.default));
         }
     }
 }

@@ -1,10 +1,6 @@
-.svgWrapper {
-    display: inline-block;
-    vertical-align: center
+.react-svg {
+    display: block;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
-.svgWrapper svg {
-        display: block;
-        -webkit-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-    }

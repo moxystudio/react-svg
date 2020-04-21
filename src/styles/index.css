@@ -1,9 +1,4 @@
-.svgWrapper {
-    display: inline-block;
-    vertical-align: center;
-
-    & svg {
-        display: block;
-        user-select: none;
-    }
+.react-svg {
+    display: block;
+    user-select: none;
 }

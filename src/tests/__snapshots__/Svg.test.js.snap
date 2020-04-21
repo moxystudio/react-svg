@@ -1,9 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Svg should handle correctly when svg is a promise 1`] = `"<i class=\\"svgWrapper\\"></i>"`;
+exports[`Svg should handle correctly when svg is a promise 1`] = `<DocumentFragment />`;
 
-exports[`Svg should handle correctly when svg is a promise that fails 1`] = `"<i class=\\"svgWrapper\\"></i>"`;
+exports[`Svg should handle correctly when svg is a promise that fails 1`] = `<DocumentFragment />`;
 
-exports[`Svg should render correctly 1`] = `"<i class=\\"svgWrapper\\">foo</i>"`;
+exports[`Svg should render correctly 1`] = `
+<DocumentFragment>
+  <svg
+    class="react-svg"
+    height="100"
+    width="100"
+  >
+     
+                
+    <circle
+      cx="50"
+      cy="50"
+      r="40"
+      stroke="black"
+      stroke-width="3"
+    />
+    
+            
+  </svg>
+</DocumentFragment>
+`;
 
-exports[`Svg should render correctly when receiving new svg prop 1`] = `"<i class=\\"svgWrapper\\">bar</i>"`;
+exports[`Svg should render correctly when receiving new svg promise 1`] = `<DocumentFragment />`;
+
+exports[`Svg should render correctly when receiving new svg prop 1`] = `
+<DocumentFragment>
+  <svg
+    class="react-svg"
+    height="100"
+    width="100"
+  >
+     
+                
+    <circle
+      cx="50"
+      cy="50"
+      r="40"
+      stroke="black"
+      stroke-width="3"
+    />
+    
+            
+  </svg>
+</DocumentFragment>
+`;

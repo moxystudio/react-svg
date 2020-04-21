@@ -31,22 +31,24 @@ In the course of making a project, there is often a need to inject `SVG` into th
 ## Usage
 
 ```js
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react';
+import Svg from '@moxy/react-svg';
 
-import Svg from '../svg';
+import styles from './index.module.css';
+const arrowLeft = import(/* webpackChunkName: "svg-sprite" */ '../media/icons/arrow-left.inline.svg');
 
-import styles from './Icon.css';
+const Home = () => {
+    const svgPromise = Promise.resolve({ default: arrowLeft });
 
-export const Icon = forwardRef(({ className, ...rest }, ref) => {
-    const finalProps = {
-        ...rest,
-        className: classNames(styles.icon, className),
-    };
+    return (
+        <div>
+            <h1>react-svg</h1>
+            <Svg svg={ svgPromise } className={ styles.svg } />
+        </div>
+    );
+};
 
-    return <Svg ref={ ref } { ...finalProps } />;
-});
+export default Home;
 ```
 
 ## API
@@ -70,7 +72,7 @@ A className to apply to the component.
 
 Type: `object` | Required: `false`
 
-A ref that will be attached to the icon (`<i>`) component that `@moxy/react-svg` ultimately returns.
+A ref that will be attached to the icon (`<svg>`) component that `@moxy/react-svg` ultimately returns.
 
 
 ## Tests
