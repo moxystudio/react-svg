@@ -1,3 +1,5 @@
-.svg {
-    fill: #00aced;
+.home {
+    & .svg {
+        fill: #00aced;
+    }
 }

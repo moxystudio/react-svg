@@ -35,6 +35,7 @@ import React from 'react';
 import Svg from '@moxy/react-svg';
 
 import styles from './index.module.css';
+
 const arrowLeft = import(/* webpackChunkName: "svg-sprite" */ '../media/icons/arrow-left.inline.svg');
 
 const Home = () => {
@@ -62,7 +63,7 @@ Type: `string` or `object` | Required: `true`
 The contents of the `SVG` that should be rendered. 
 In the case of the prop being an object, it must be the `Promise` that gets the contents of the `SVG`.
 
-#### classname
+#### className
 
 Type: `string` | Required: `false`
 
@@ -81,6 +82,24 @@ A ref that will be attached to the icon (`<svg>`) component that `@moxy/react-sv
 $ npm test
 $ npm test -- --watch # during development
 ```
+## Demo
+
+A demo [Next.js](https://nextjs.org/) project is available in the [`/demo`](./demo) folder so you can try out this component.
+
+First, build the `{package-name}` project with:
+
+```sh
+$ npm run build
+```
+
+To run the demo, do the following inside the demo's folder:
+
+```sh
+$ npm i
+$ npm run dev
+```
+
+*Note: Everytime a change is made to the package a rebuild is required to reflect those changes on the demo.*
 
 ## License
 
