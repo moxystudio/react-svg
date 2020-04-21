@@ -36,18 +36,16 @@ import Svg from '@moxy/react-svg';
 
 import styles from './index.module.css';
 
-const arrowLeft = import(/* webpackChunkName: "svg-sprite" */ '../media/icons/arrow-left.inline.svg');
+const twitterLogo = import(/* webpackChunkName: "svg-sprite" */ '../media/twitter.inline.svg');
 
-const Home = () => {
-    const svgPromise = Promise.resolve({ default: arrowLeft });
-
-    return (
-        <div>
-            <h1>react-svg</h1>
-            <Svg svg={ svgPromise } className={ styles.svg } />
-        </div>
-    );
-};
+const Home = () => (
+    <div className={ styles.home }>
+        <h1>react-svg</h1>
+        <br />
+        <p>This is a svg of the Twitter logo.</p>
+        <Svg svg={ twitterLogo } className={ styles.svg } />
+    </div>
+);
 
 export default Home;
 ```
@@ -74,7 +72,6 @@ A className to apply to the component.
 Type: `object` | Required: `false`
 
 A ref that will be attached to the icon (`<svg>`) component that `@moxy/react-svg` ultimately returns.
-
 
 ## Tests
 
