@@ -83,7 +83,7 @@ $ npm test -- --watch # during development
 
 A demo [Next.js](https://nextjs.org/) project is available in the [`/demo`](./demo) folder so you can try out this component.
 
-First, build the `{package-name}` project with:
+First, build the `react-svg` project with:
 
 ```sh
 $ npm run build
