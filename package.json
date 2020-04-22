@@ -1,6 +1,6 @@
 {
   "name": "@moxy/react-svg",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A component that renders the contents of an SVG file.",
   "main": "lib/index.js",
   "module": "es/index.js",
