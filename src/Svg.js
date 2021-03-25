@@ -1,7 +1,7 @@
 import React, { Component, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { convertAttributeToJSX } from './utils/convert';
+import convertAttr from './utils/convert-attr';
 
 export class Svg extends Component {
     promise = undefined;
@@ -49,7 +49,7 @@ export class Svg extends Component {
         const svgElem = doc.querySelector('svg');
 
         const attributes = Array.from(svgElem.attributes).reduce((acc, item) => {
-            acc[convertAttributeToJSX(item.name)] = item.nodeValue;
+            acc[convertAttr(item.name)] = item.nodeValue;
 
             return acc;
         }, {});

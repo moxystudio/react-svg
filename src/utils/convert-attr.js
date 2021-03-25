@@ -86,4 +86,6 @@ const svgAttributes = {
     'xml:space': 'xmlSpace',
 };
 
-export default svgAttributes;
+const convertAttr = (attribute) => svgAttributes[attribute] ?? attribute;
+
+export default convertAttr;
