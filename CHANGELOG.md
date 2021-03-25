@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/moxystudio/react-svg/compare/v1.0.1...v1.1.0) (2021-03-25)
+
+
+### Features
+
+* convert attributes to valid JSX ([#6](https://github.com/moxystudio/react-svg/issues/6)) ([5edd57a](https://github.com/moxystudio/react-svg/commit/5edd57a80f0ff5944bb1ef0da9ed4b386aee9750))
+
+
+### Bug Fixes
+
+* wrong keywords and typo in readme ([#2](https://github.com/moxystudio/react-svg/issues/2)) ([c49ed01](https://github.com/moxystudio/react-svg/commit/c49ed01225a92b3dd687ee4699d09cf7050bac38))
+
 ### [1.0.1](https://github.com/moxystudio/react-svg/compare/v1.0.0...v1.0.1) (2020-04-22)
 
 
